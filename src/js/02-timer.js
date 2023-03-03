@@ -2,7 +2,6 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from 'notiflix';
 
-let startTime = null;
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -46,8 +45,8 @@ function addDisabledAttribute(){
 function onStartBtnClick(){
   const intervalId = setInterval(() => {
     const currentTime = Date.now();
-    let ms = startTime - currentTime;
-    let time = convertMs(ms);
+    const ms = startTime - currentTime;
+    const time = convertMs(ms);
     const withZero = addLeadingZero(time);
     renderStopWatch(withZero);
     if(time.days === 0 && time.hours === 0 && time.minutes === 0 && time.seconds === 0){
