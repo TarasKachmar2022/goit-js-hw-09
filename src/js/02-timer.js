@@ -2,7 +2,7 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from 'notiflix';
 
-const startTime = null;
+let startTime;
 const options = {
   enableTime: true,
   time_24hr: true,
