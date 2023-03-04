@@ -17,7 +17,7 @@ const options = {
       return;
     }
     refs.startBtnEl.removeAttribute('disabled');
-    startTime = selectedDates[0].getTime();
+    options.startTime = selectedDates[0].getTime();
   }
 };
 
@@ -46,7 +46,7 @@ function addDisabledAttribute(){
 function onStartBtnClick(){
   const intervalId = setInterval(() => {
     const currentTime = Date.now();
-    const ms = startTime - currentTime;
+    const ms = this.startTime - currentTime;
     const time = convertMs(ms);
     const withZero = addLeadingZero(time);
     renderStopWatch(withZero);
