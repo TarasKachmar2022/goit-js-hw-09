@@ -1,12 +1,13 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from 'notiflix';
-let startTime;
+// let startTime;
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
+  startTime: null,
   onClose(selectedDates) {
     const selectTime = selectedDates[0] - options.defaultDate;
     if(selectTime < 0){
