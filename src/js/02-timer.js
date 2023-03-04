@@ -50,7 +50,7 @@ function onStartBtnClick(){
     const time = convertMs(ms);
     const withZero = addLeadingZero(time);
     renderStopWatch(withZero);
-    if(time.days === 0 && time.hours === 0 && time.minutes === 0 && time.seconds === 0){
+    if(ms < 0){
       clearInterval(intervalId)
     }
   }, 1000);
