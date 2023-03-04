@@ -10,7 +10,7 @@ const options = {
   startTime: null,
   onClose(selectedDates) {
     const selectTime = selectedDates[0] - options.defaultDate;
-    if(selectTime < 1000){
+    if(selectTime < 0){
       // alert("Please choose a date in the future");
       Notiflix.Notify.failure("Please choose a date in the future");
       addDisabledAttribute();
@@ -50,7 +50,7 @@ function onStartBtnClick(){
     const time = convertMs(ms);
     const withZero = addLeadingZero(time);
     renderStopWatch(withZero);
-    if(ms < 0){
+    if(ms < 1000){
       clearInterval(intervalId)
     }
   }, 1000);
