@@ -10,7 +10,7 @@ const options = {
   startTime: null,
   onClose(selectedDates) {
     const selectTime = selectedDates[0] - options.defaultDate;
-    if(selectTime < 0){
+    if(selectTime < 1000){
       // alert("Please choose a date in the future");
       Notiflix.Notify.failure("Please choose a date in the future");
       addDisabledAttribute();
